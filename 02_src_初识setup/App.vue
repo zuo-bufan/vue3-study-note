@@ -16,16 +16,7 @@
     <button @click="test2">按钮(vue3的setup配置中读取vue2的数据、方法 )</button>
   </div>
 </template>
-/* 
 
-注意点：
-  尽量不要把vue3与vue2 配置混用
-    vue2的配置可以读取vue3的setup数据
-    vue3的setup不可以读取vue2的配置
-    如果有重名，vue3的setup优先
-
-
- */
 <script>
 import { h, onMounted } from "vue";
 export default {
@@ -47,6 +38,13 @@ export default {
       this.sayHello();
     }
   },
+  /* 
+    注意点：
+      尽量不要把vue3与vue2 配置混用
+        vue2的配置可以读取vue3的setup数据
+        vue3的setup不可以读取vue2的配置
+        如果有重名，vue3的setup优先
+ */
   // 此处只是测试setup，暂不考虑响应式的问题。
   setup() {
     //拉开帷幕的setup配置组合式api
