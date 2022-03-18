@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// 使用ref 必须要在vue中引入
 import { ref } from "vue";
 export default {
   name: "App",
@@ -20,16 +21,17 @@ export default {
     let name = ref("张三");
     let age = ref(18);
     let obj = ref({
-      type:'前端攻城狮',
-      salry:'30k'
-    })
+      type: "前端攻城狮",
+      salry: "30k"
+    });
 
     function changeMsg() {
       name.value = "李四";
       age.value = 26;
-      obj.value.type = '后端攻城狮'
-      obj.value.salry = '10k' 
-      console.log(obj.value)
+      // 对于对象使用ref定义数据 修改数据时一定要先.value在取对象里的属性
+      obj.value.type = "后端攻城狮";
+      obj.value.salry = "10k";
+      console.log(obj.value);
       console.log(name, age);
     }
 
