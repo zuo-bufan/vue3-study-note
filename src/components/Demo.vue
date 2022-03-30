@@ -31,9 +31,9 @@ export default {
         return person.firstName + "-" + person.lastName;
       },
       set(value) {
-        const newArr = value.split("-")
-        person.firstName = newArr[0]
-        person.lastName = newArr[1]
+        const newArr = value.split("-");
+        person.firstName = newArr[0];
+        person.lastName = newArr[1];
       }
     });
 
